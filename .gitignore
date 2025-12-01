@@ -37,6 +37,8 @@ birdnet/
 templates/*.service
 scripts/*.txt
 scripts/*.db
+scripts/*.db-wal
+scripts/*.db-shm
 analyzing_now.txt
 apprise.txt
 body.txt
@@ -47,3 +49,11 @@ HUMAN.txt
 include_species_list.txt
 whitelist_species_list.txt
 /nbproject/private/
+
+*.mount
+
+tflite_runtime*
+requirements_custom.txt
+
+node_modules
+dist
