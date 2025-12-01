@@ -1,7 +1,6 @@
 export type Config = ReturnType<typeof getConfig>;
 export const getConfig = () => {
   const env = process.env;
-  console.log(process.env);
 
   return {
     SITE_NAME: env.SITE_NAME,

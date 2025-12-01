@@ -21,9 +21,6 @@ app.use((req, res, next) => {
     'Cache-Control',
     'no-store, no-cache, must-revalidate, proxy-revalidate',
   );
-
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
-
   next();
 });
 

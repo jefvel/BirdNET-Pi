@@ -9,7 +9,6 @@ export default class ConfigController {
   }
 
   getConfig = (req: Request, res: Response) => {
-		console.log(this.config.current)
     return res.json({
       siteName: this.config.current.SITE_NAME,
     });

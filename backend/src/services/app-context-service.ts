@@ -27,8 +27,6 @@ type Gateway = {
   repositories: Repositories;
 
   birdsDb: DatabaseType;
-  wikipediaDb: DatabaseType;
-  flickrDb: DatabaseType;
 
   close: () => void;
 };
@@ -43,12 +41,8 @@ export class AppContextService {
     const scriptsPath = `${rootDir}/scripts`;
     const localesPath = `${rootDir}/model/l18n`;
     const birdsDbPath = `${scriptsPath}/birds.db`;
-    const wikipediaDbPath = `${scriptsPath}/wikipedia.db`;
-    const flickrDbPath = `${scriptsPath}/flickr.db`;
 
     const birdsDb = new Database(birdsDbPath);
-    const wikipediaDb = new Database(wikipediaDbPath);
-    const flickrDb = new Database(flickrDbPath);
 
     const repositories: Repositories = {
       birdsRepository: new BirdRepository(birdsDb, localesPath),
@@ -60,12 +54,8 @@ export class AppContextService {
     return {
       repositories,
       birdsDb,
-      wikipediaDb,
-      flickrDb,
       close: () => {
         birdsDb.close();
-        flickrDb.close();
-        wikipediaDb.close();
       },
     };
   }
