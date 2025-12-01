@@ -85,7 +85,7 @@ def create_plot(df_plt_today, now, is_top=None):
     if conf['COLOR_SCHEME'] == "dark":
         facecolor = 'darkgrey'
     else:
-        facecolor = '#77C487'
+        facecolor = '#F3F6F4'
 
     f, axs = plt.subplots(1, 2, figsize=(10, height), gridspec_kw=dict(width_ratios=[3, 6]), facecolor=facecolor)
 
@@ -171,7 +171,7 @@ def create_plot(df_plt_today, now, is_top=None):
     plot.set(ylabel=None)
     plot.set(xlabel="Hour of Day")
     # Set combined plot layout and titles
-    y = 1 - 8 / (height * 100)
+    y = 0.96 #1 - 8 / (height * 100)
     plt.suptitle(f"{plot_type} {readings} Last Updated: {now.strftime('%Y-%m-%d %H:%M')}", y=y)
     f.tight_layout()
     top = 1 - 40 / (height * 100)
